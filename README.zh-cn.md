@@ -14,12 +14,12 @@
 首先在根目录中的`build.gradle`文件中添加`TinyPngPlugin`的依赖：
 
  	dependencies {
-    	classpath 'com.waynell.tinypng:TinyPngPlugin:1.0.5'
+    	classpath 'com.github.ly-android:TinyPngPlugin:1.0.0'
 	}
 
 然后在app目录中的`build.gradle`文件中应用该插件，并配置`tinyinfo`：
 
- 	apply plugin: 'com.waynell.tinypng'
+ 	apply plugin: 'tinypng'
 
  	tinyInfo {
     	resourceDir = [
@@ -35,7 +35,7 @@
         whiteList = [
         	// 在这里添加文件白名单，支持正则表达式
         ]
-        apiKey = 'your tiny API key'
+        apiKeys = ['your tiny API key']
     }
 
 使用`Android Studio`的同学，可以在`tinypng`目录中找到相关的构建任务。或者也可以直接在终端中运行`./gradlew tinyPng`命令来执行任务

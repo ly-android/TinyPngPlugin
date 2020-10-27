@@ -14,12 +14,12 @@ Before use this plugin, you need get a Tiny API Key first. Goto [Tiny Developers
 Add `TinyPngPlugin` as a dependency in your main build.gradle in the root of your project:
 
  	dependencies {
-    	classpath 'com.waynell.tinypng:TinyPngPlugin:1.0.5'
+    	classpath 'com.github.ly-android:TinyPngPlugin:1.0.0'
 	}
 
 Then you need to apply the plugin and configure your `tinyinfo` by adding the following lines to your `app/build.gradle`:
 
- 	apply plugin: 'com.waynell.tinypng'
+ 	apply plugin: 'tinypng'
 
  	tinyInfo {
     	resourceDir = [
@@ -35,7 +35,7 @@ Then you need to apply the plugin and configure your `tinyinfo` by adding the fo
         whiteList = [
         	// your white list, support Regular Expressions
         ]
-        apiKey = 'your tiny API key'
+        apiKeys = ['your tiny API key']
     }
 
 If you are using `Android Studio`, you can find the generate task option in `tinypng` group. Or alternatively, you run `./gradlew tinyPng` in your terminal.
