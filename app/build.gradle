@@ -1,0 +1,58 @@
+import com.android.ide.common.gradle.model.ProjectAttribute
+
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+    defaultConfig {
+        applicationId "com.example.app"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+//apply plugin: 'tinypng'
+//
+//tinyInfo {
+//    resourceDir = [
+//            // your res dir
+//            "app/src/main/res",
+//    ]
+//    resourcePattern = [
+//            // your res pattern
+//            "drawable[a-z-]*",
+//            "mipmap[a-z-]*"
+//    ]
+//    whiteList = [
+//            // your white list, support Regular Expressions
+//            host*.png
+//    ]
+//    apiKey = '1H9T0lGbhY46nGmHfNT8VRR2MjR2kcWk'
+//}
