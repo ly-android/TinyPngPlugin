@@ -9,12 +9,14 @@ class TinyPngExtension {
     ArrayList<String> whiteList
     ArrayList<String> resourceDir
     ArrayList<String> resourcePattern
+    boolean enable
 
     TinyPngExtension() {
         apiKeys = []
         whiteList = []
         resourceDir = []
         resourcePattern = []
+        enable = true
     }
 
     @Override
@@ -23,6 +25,7 @@ class TinyPngExtension {
                 "apiKey='" + apiKeys + '\'' +
                 ", whiteList=" + whiteList +
                 ", resourceDir=" + resourceDir +
+                ", enable=" + enable +
                 ", resourcePattern=" + resourcePattern +
                 '}';
     }
