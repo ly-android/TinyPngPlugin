@@ -35,24 +35,24 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
 
-apply plugin: 'tinyPng'
-
-tinyInfo {
-    resourceDir = [
-            // your res dir
-            "app/src/main/res",
-    ]
-    resourcePattern = [
-            // your res pattern
-            "drawable[a-z-]*",
-            "mipmap[a-z-]*"
-    ]
-    whiteList = [
-            // your white list, support Regular Expressions
-            'host.+\\.png'
-    ]
-    apiKeys = ['6TgBR0Tx6G83P98kMVF1SvPbsFjfl0qk',
-               'qjzpbVFPvpLN1ZDlQZHt31hZpfYyM68y',
-               'QSs7jsHf5W8LWWdQd4j5hbW6Rgcvscr0'
-    ]
-}
+//apply plugin: 'tinyPng'
+//
+//tinyInfo {
+//    resourceDir = [
+//            // your res dir
+//            "app/src/main/res",
+//    ]
+//    resourcePattern = [
+//            // your res pattern
+//            "drawable[a-z-]*",
+//            "mipmap[a-z-]*"
+//    ]
+//    whiteList = [
+//            // your white list, support Regular Expressions
+//            'host.+\\.png'
+//    ]
+//    apiKeys = ['6TgBR0Tx6G83P98kMVF1SvPbsFjfl0qk',
+//               'qjzpbVFPvpLN1ZDlQZHt31hZpfYyM68y',
+//               'QSs7jsHf5W8LWWdQd4j5hbW6Rgcvscr0'
+//    ]
+//}

@@ -1,2 +1,3 @@
 include ':app'
-//include ':buildSrc'
+include ':buildSrc'
+project(':buildSrc').setName('tinyPng')
