@@ -17,7 +17,7 @@ class TinyPngPlugin implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
-        project.extensions.create("tinyInfo", com.waynell.tinypng.TinyPngExtension)
+        project.extensions.create("tinyInfo", TinyPngExtension)
         project.task("tinyPng", type: TinyPngTask)
         def taskPreBuild = project.tasks.getByName("preBuild")
         boolean enable = project.extensions.tinyInfo.enable
