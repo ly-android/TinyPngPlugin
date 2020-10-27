@@ -18,6 +18,7 @@ class TinyPngTask extends DefaultTask {
 
     def android
     TinyPngExtension configuration
+    def apiKeys = new ArrayList<String>()
 
     TinyPngTask() {
         description = 'Tiny Resources'
@@ -132,7 +133,6 @@ class TinyPngTask extends DefaultTask {
     }
 
     private boolean validKey() {
-        def apiKeys = new ArrayList<String>(configuration.apiKeys)
         if (apiKeys.size() == 0) return false
         def apiKey = apiKeys.pop()
         try {
@@ -148,7 +148,7 @@ class TinyPngTask extends DefaultTask {
     @TaskAction
     def run() {
         println(configuration.toString())
-
+        apiKeys.addAll(configuration.apiKeys)
         if (!(configuration.resourceDir ?: false)) {
             println("Not found resources list")
             return
