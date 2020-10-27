@@ -137,7 +137,7 @@ class TinyPngTask extends DefaultTask {
         def apiKey = apiKeys.pop()
         try {
             Tinify.setKey(apiKey)
-            return Tinify.validate()
+            return !Tinify.validate() //返回验证成功的
         } catch (Exception ignored) {
             println("Tiny Validation of API key failed.")
             ignored.printStackTrace()
