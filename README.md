@@ -1,6 +1,6 @@
 *Read this in other languages: [English](README.md),[简体中文](README.zh-cn.md).*
 
-[![Build Status](https://semaphoreapp.com/api/v1/projects/d4cca506-99be-44d2-b19e-176f36ec8cf1/128505/shields_badge.svg)](https://github.com/waynell/TinyPngPlugin) [ ![Download](https://api.bintray.com/packages/waynell/maven/TinyPngPlugin/images/download.svg?version=1.0.5) ](https://bintray.com/waynell/maven/TinyPngPlugin/1.0.5/link)
+[![](https://jitpack.io/v/ly-android/TinyPngPlugin.svg)](https://jitpack.io/#ly-android/TinyPngPlugin)
 
 ### TinyPngPlugin
 `TinyPngPlugin` is a Gradle plugin for [TinyPng](https://tinypng.com/), can batch optimize your images.

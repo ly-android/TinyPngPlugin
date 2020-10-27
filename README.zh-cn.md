@@ -1,6 +1,6 @@
 *其它语言版本: [English](README.md),[简体中文](README.zh-cn.md).*
 
-[![Build Status](https://semaphoreapp.com/api/v1/projects/d4cca506-99be-44d2-b19e-176f36ec8cf1/128505/shields_badge.svg)](https://github.com/waynell/TinyPngPlugin) [ ![Download](https://api.bintray.com/packages/waynell/maven/TinyPngPlugin/images/download.svg?version=1.0.5) ](https://bintray.com/waynell/maven/TinyPngPlugin/1.0.5/link)
+[![](https://jitpack.io/v/ly-android/TinyPngPlugin.svg)](https://jitpack.io/#ly-android/TinyPngPlugin)
 
 ### TinyPngPlugin
 `TinyPngPlugin`是一个[TinyPng](https://tinypng.com/)的Gradle插件，它能够批量地压缩你项目中的图片
