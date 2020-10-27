@@ -14,7 +14,7 @@
 首先在根目录中的`build.gradle`文件中添加`TinyPngPlugin`的依赖：
 
  	dependencies {
-    	classpath 'com.github.ly-android:TinyPngPlugin:1.0.0'
+    	classpath 'com.github.ly-android:TinyPngPlugin:1.0.4'
 	}
 
 然后在app目录中的`build.gradle`文件中应用该插件，并配置`tinyinfo`：

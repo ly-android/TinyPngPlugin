@@ -1,4 +1,4 @@
-package com.waynell.tinypng
+package com.allen.tinypng
 
 /**
  * Create On 27/10/2020

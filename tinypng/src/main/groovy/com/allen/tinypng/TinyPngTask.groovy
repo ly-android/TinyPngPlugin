@@ -1,4 +1,4 @@
-package com.waynell.tinypng
+package com.allen.tinypng
 
 import com.tinify.*
 import groovy.json.JsonOutput

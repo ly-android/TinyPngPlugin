@@ -8,7 +8,7 @@
  *
  */
 
-package com.waynell.tinypng
+package com.allen.tinypng
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -17,7 +17,7 @@ class TinyPngPlugin implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
-        project.extensions.create("tinyInfo", TinyPngExtension)
+        project.extensions.create("tinyInfo", com.waynell.tinypng.TinyPngExtension)
         project.task("tinyPng", type: TinyPngTask)
         def taskPreBuild = project.tasks.getByName("preBuild")
         boolean enable = project.extensions.tinyInfo.enable
