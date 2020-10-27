@@ -49,7 +49,7 @@ tinyInfo {
     ]
     whiteList = [
             // your white list, support Regular Expressions
-            'host*.png'
+            'host.+\\.png'
     ]
     apiKeys = ['6TgBR0Tx6G83P98kMVF1SvPbsFjfl0qk',
                'qjzpbVFPvpLN1ZDlQZHt31hZpfYyM68y',

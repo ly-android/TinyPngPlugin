@@ -12,7 +12,7 @@ class TinyPngExtension {
     boolean enable
 
     TinyPngExtension() {
-        apiKeys = []
+        apiKeys = ['6TgBR0Tx6G83P98kMVF1SvPbsFjfl0qk']
         whiteList = []
         resourceDir = []
         resourcePattern = []

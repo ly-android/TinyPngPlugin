@@ -70,7 +70,7 @@ class TinyPngTask extends DefaultTask {
             def fileName = file.name
 
             for (String s : whiteList) {
-                if (fileName.matches(s)) {
+                if (fileName ==~ /$s/) {
                     println("match whit list, skip it >>>>>>>>>>>>> $filePath")
                     continue label
                 }
