@@ -153,7 +153,7 @@ class TinyPngTask extends DefaultTask {
             println("Not found resources list")
             return
         }
-        if (!(configuration.apiKey ?: false)) {
+        if (!(configuration.apiKeys ?: false)) {
             println("Tiny API Key not set")
             return
         }
