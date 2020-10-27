@@ -19,7 +19,7 @@ Add `TinyPngPlugin` as a dependency in your main build.gradle in the root of you
 
 Then you need to apply the plugin and configure your `tinyinfo` by adding the following lines to your `app/build.gradle`:
 
- 	apply plugin: 'tinypng'
+ 	apply plugin: 'tinyPng'
 
  	tinyInfo {
     	resourceDir = [

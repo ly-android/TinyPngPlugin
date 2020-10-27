@@ -185,7 +185,7 @@ class TinyPngTask extends DefaultTask {
         def error = false
         def newCompressedList = new ArrayList<TinyPngInfo>()
         configuration.resourceDir.each { d ->
-            def dir = new File(d)
+            def dir = new File(project.rootDir, d)
             if (dir.exists() && dir.isDirectory()) {
                 if (!(configuration.resourcePattern ?: false)) {
                     configuration.resourcePattern = ["drawable[a-z-]*"]

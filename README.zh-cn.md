@@ -19,7 +19,7 @@
 
 然后在app目录中的`build.gradle`文件中应用该插件，并配置`tinyinfo`：
 
- 	apply plugin: 'tinypng'
+ 	apply plugin: 'tinyPng'
 
  	tinyInfo {
     	resourceDir = [
