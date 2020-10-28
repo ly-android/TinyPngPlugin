@@ -1,0 +1,88 @@
+apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'com.jfrog.bintray'
+
+
+def moduleName = "tinyPng"
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+
+apply plugin: 'maven-publish'
+
+//源代码打包任务
+task sourcesJar(type: Jar) {
+    baseName moduleName
+    classifier 'sources'//分类器,区分其他jar包
+    from sourceSets.main.allSource
+}
+
+//文档包任务
+task docJar(type: Jar, dependsOn: [javadoc, groovydoc]) {
+    baseName moduleName
+    classifier 'doc'//分类器,区分其他jar包
+    from javadoc.destinationDir, groovydoc.destinationDir
+}
+
+//配置工程工件,也就是jar产出的配置
+artifacts {
+    archives sourcesJar
+    archives docJar
+}
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:bintray-release:0.9.2'
+    }
+}
+
+
+bintray {
+    user = USER_NAME
+    key = jcenterKey
+    //上传的内容
+    publications = ['plugin']
+    pkg {
+        repo = 'tinypngplugin'//需要上传的仓库名
+        name = moduleName //上传到jcenter的项目名
+        licenses = ['Apache-2.0']//开源许可
+        //这里的地址是不会验证的,随便输入都可以,不配置也可以
+        vcsUrl = 'https://github.com/ly-android/TinyPngPlugin.git'
+        version {
+            name = PLUGIN_VERSION
+            desc = '一个可以自动化压缩资源图片的插件'
+            released = new Date()
+            attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+        }
+        publicDownloadNumbers = true
+    }
+}
+//上传配置
+publishing {
+    publications {
+        plugin(MavenPublication) {
+            from components.java
+            //如果不指定，默认就是工程名
+            groupId 'com.allen.tools.plugin'
+            artifactId moduleName
+            version PLUGIN_VERSION
+            artifact sourcesJar
+            artifact docJar
+
+            //pom文件配置
+            pom.withXml {
+                def root = asNode()
+                def licensesNode = root.appendNode('licenses').appendNode('license')
+                licensesNode.appendNode('name', 'Apache License, Version 2.0')
+                licensesNode.appendNode('url', 'https://www.apache.org/licenses/LICENSE-2.0.txt')
+                licensesNode.appendNode('distribution', 'repo')
+                licensesNode.appendNode('comments', 'A business-friendly OSS license')
+            }
+        }
+    }
+}

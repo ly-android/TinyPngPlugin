@@ -1,6 +1,5 @@
 *Read this in other languages: [English](README.md),[简体中文](README.zh-cn.md).*
 
-[![](https://jitpack.io/v/ly-android/TinyPngPlugin.svg)](https://jitpack.io/#ly-android/TinyPngPlugin)
 
 ### TinyPngPlugin
 `TinyPngPlugin` is a Gradle plugin for [TinyPng](https://tinypng.com/), can batch optimize your images.
@@ -14,7 +13,7 @@ Before use this plugin, you need get a Tiny API Key first. Goto [Tiny Developers
 Add `TinyPngPlugin` as a dependency in your main build.gradle in the root of your project:
 
  	dependencies {
-    	classpath 'com.github.ly-android:TinyPngPlugin:1.0.4'
+    	classpath 'com.allen.tools.plugin:tinyPng:1.0.0'
 	}
 
 Then you need to apply the plugin and configure your `tinyinfo` by adding the following lines to your `app/build.gradle`:
@@ -34,6 +33,7 @@ Then you need to apply the plugin and configure your `tinyinfo` by adding the fo
         ]
         whiteList = [
         	// your white list, support Regular Expressions
+        	'host.+\\.png'
         ]
         apiKeys = ['your tiny API key']
     }

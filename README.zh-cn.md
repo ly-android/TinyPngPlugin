@@ -1,6 +1,5 @@
 *其它语言版本: [English](README.md),[简体中文](README.zh-cn.md).*
 
-[![](https://jitpack.io/v/ly-android/TinyPngPlugin.svg)](https://jitpack.io/#ly-android/TinyPngPlugin)
 
 ### TinyPngPlugin
 `TinyPngPlugin`是一个[TinyPng](https://tinypng.com/)的Gradle插件，它能够批量地压缩你项目中的图片
@@ -14,7 +13,7 @@
 首先在根目录中的`build.gradle`文件中添加`TinyPngPlugin`的依赖：
 
  	dependencies {
-    	classpath 'com.github.ly-android:TinyPngPlugin:1.0.4'
+    	classpath 'com.allen.tools.plugin:tinyPng:1.0.0'
 	}
 
 然后在app目录中的`build.gradle`文件中应用该插件，并配置`tinyinfo`：
@@ -34,6 +33,7 @@
         ]
         whiteList = [
         	// 在这里添加文件白名单，支持正则表达式
+        	'host.+\\.png'
         ]
         apiKeys = ['your tiny API key']
     }
