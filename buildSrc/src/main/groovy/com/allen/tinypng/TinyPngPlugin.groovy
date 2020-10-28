@@ -20,10 +20,13 @@ class TinyPngPlugin implements Plugin<Project> {
         println "apply plugin :tinyPng"
         project.extensions.create("tinyInfo", TinyPngExtension)
         project.task("tinyPng", type: TinyPngTask)
-        def taskPreBuild = project.tasks.getByName("preBuild")
-        boolean enable = project.extensions.tinyInfo.enable
-        if (enable) {
-            taskPreBuild.dependsOn project.tasks.getByName('tinyPng')
+
+        project.afterEvaluate {
+            def taskPreBuild = project.tasks.getByName("preBuild")
+            boolean enable = project.extensions.tinyInfo.enable
+            if (enable) {
+                taskPreBuild.dependsOn project.tasks.getByName('tinyPng')
+            }
         }
     }
 }

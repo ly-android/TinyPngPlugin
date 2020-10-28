@@ -16,7 +16,7 @@ class TinyPngExtension {
         whiteList = []
         resourceDir = []
         resourcePattern = []
-        enable = true
+        enable = false
     }
 
     @Override

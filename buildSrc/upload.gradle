@@ -68,7 +68,7 @@ publishing {
         plugin(MavenPublication) {
             from components.java
             //如果不指定，默认就是工程名
-            groupId 'com.allen.tools.plugin'
+            groupId 'com.allen.tools.gradle'
             artifactId moduleName
             version PLUGIN_VERSION
             artifact sourcesJar
