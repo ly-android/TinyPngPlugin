@@ -1,5 +1,6 @@
 *Read this in other languages: [English](README.md),[简体中文](README.zh-cn.md).*
 
+[ ![Download](https://api.bintray.com/packages/allenli/tinypngplugin/tinyPng/images/download.svg?version=1.0.0) ](https://bintray.com/allenli/tinypngplugin/tinyPng/1.0.0/link)
 
 ### TinyPngPlugin
 `TinyPngPlugin` is a Gradle plugin for [TinyPng](https://tinypng.com/), can batch optimize your images.

@@ -1,5 +1,6 @@
 *其它语言版本: [English](README.md),[简体中文](README.zh-cn.md).*
 
+[ ![Download](https://api.bintray.com/packages/allenli/tinypngplugin/tinyPng/images/download.svg?version=1.0.0) ](https://bintray.com/allenli/tinypngplugin/tinyPng/1.0.0/link)
 
 ### TinyPngPlugin
 `TinyPngPlugin`是一个[TinyPng](https://tinypng.com/)的Gradle插件，它能够批量地压缩你项目中的图片
