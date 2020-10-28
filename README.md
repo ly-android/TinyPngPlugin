@@ -14,7 +14,7 @@ Before use this plugin, you need get a Tiny API Key first. Goto [Tiny Developers
 Add `TinyPngPlugin` as a dependency in your main build.gradle in the root of your project:
 
  	dependencies {
-    	classpath 'com.allen.tools.gradle:tinyPng:1.0.0'
+    	classpath 'com.allen.tools.gradle:tinyPng:1.0.1'
 	}
 
 Then you need to apply the plugin and configure your `tinyinfo` by adding the following lines to your `app/build.gradle`:
