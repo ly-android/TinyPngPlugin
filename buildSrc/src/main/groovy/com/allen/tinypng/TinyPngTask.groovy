@@ -59,7 +59,7 @@ class TinyPngTask extends DefaultTask {
         return bigInt.toString(16).padLeft(32, '0')
     }
 
-    static TinyPngResult compress(File resDir, Iterable<String> whiteList, Iterable<TinyPngInfo> compressedList) {
+    TinyPngResult compress(File resDir, Iterable<String> whiteList, Iterable<TinyPngInfo> compressedList) {
         def newCompressedList = new ArrayList<TinyPngInfo>()
         def accountError = false
         def beforeTotalSize = 0
@@ -77,7 +77,8 @@ class TinyPngTask extends DefaultTask {
             }
 
             for (TinyPngInfo info : compressedList) {
-                if (filePath == info.path && generateMD5(file) == info.md5) {
+                def pathkey = filePath.replace(project.projectDir.parent, "")
+                if (pathkey == info.path && generateMD5(file) == info.md5) {
                     continue label
                 }
             }
@@ -104,7 +105,8 @@ class TinyPngTask extends DefaultTask {
 
                     beforeTotalSize += beforeSize
                     afterTotalSize += afterSize
-                    newCompressedList.add(new TinyPngInfo(filePath, beforeSizeStr, afterSizeStr, generateMD5(file)))
+                    def pathkey = filePath.replace(project.projectDir.parent, "")
+                    newCompressedList.add(new TinyPngInfo(pathkey, beforeSizeStr, afterSizeStr, generateMD5(file)))
 
                     println("beforeSize: $beforeSizeStr -> afterSize: ${afterSizeStr}")
                 } catch (AccountException e) {
