@@ -3,6 +3,7 @@ package com.allen.tinypng
 import com.tinify.*
 import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
+import org.apache.tools.ant.taskdefs.condition.Os
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
 
@@ -59,6 +60,14 @@ class TinyPngTask extends DefaultTask {
         return bigInt.toString(16).padLeft(32, '0')
     }
 
+    String getFileKey(String filePath) {
+        def key = filePath.replace(project.projectDir.parent, "")
+        if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+            return key.replaceAll("\\\\", "/")
+        }
+        return key
+    }
+
     TinyPngResult compress(File resDir, Iterable<String> whiteList, Iterable<TinyPngInfo> compressedList) {
         def newCompressedList = new ArrayList<TinyPngInfo>()
         def accountError = false
@@ -77,8 +86,8 @@ class TinyPngTask extends DefaultTask {
             }
 
             for (TinyPngInfo info : compressedList) {
-                def pathkey = filePath.replace(project.projectDir.parent, "")
-                if (pathkey == info.path && generateMD5(file) == info.md5) {
+                def key = getFileKey(filePath)
+                if (key == info.path && generateMD5(file) == info.md5) {
                     continue label
                 }
             }
@@ -105,9 +114,9 @@ class TinyPngTask extends DefaultTask {
 
                     beforeTotalSize += beforeSize
                     afterTotalSize += afterSize
-                    def pathkey = filePath.replace(project.projectDir.parent, "")
-                    newCompressedList.add(new TinyPngInfo(pathkey, beforeSizeStr, afterSizeStr, generateMD5(file)))
-
+                    def key = getFileKey(filePath)
+                    newCompressedList.add(new TinyPngInfo(key, beforeSizeStr, afterSizeStr,
+                            generateMD5(file)))
                     println("beforeSize: $beforeSizeStr -> afterSize: ${afterSizeStr}")
                 } catch (AccountException e) {
                     println("AccountException: ${e.getMessage()}")
